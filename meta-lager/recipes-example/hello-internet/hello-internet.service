@@ -1,0 +1,11 @@
+[Unit]
+Description=Send HTTP POST request to webhook.site
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/wget --post-data='Sent from vasas yocto!' -O - https://webhook.site/19b100ae-5ed6-4dab-88c7-b74a7346324d
+
+[Install]
+WantedBy=multi-user.target
+
